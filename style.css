@@ -237,7 +237,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .site-header.scrolled .dropdown li a { color: rgba(255,255,255,0.8); }
 .site-header.scrolled .dropdown li a:hover { background: rgba(255,255,255,0.05); color: var(--gold); }
 .site-header.scrolled .mobile-menu-toggle span { background: #fff; }
-.site-header.scrolled .brand-logo { filter: invert(1) brightness(1.5); }
+.site-header.scrolled .brand-logo { filter: brightness(0) invert(1); }
+.site-header.scrolled .logo-tagline { color: rgba(255,255,255,0.6) !important; }
 
 .nav-inner {
   max-width: var(--max-w);
@@ -266,6 +267,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: auto;
   border-radius: 4px;
   transition: filter 0.3s var(--ease);
+}
+.logo-tagline {
+  transition: color 0.3s var(--ease);
 }
 
 /* Nav links */
@@ -425,8 +429,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .nav-inner { padding: 0 16px; gap: 8px; }
   .brand-logo { height: 32px; }
   .nav-cta { gap: 8px; }
-  .btn-emergency { font-size: 12px; padding: 8px 12px; }
-  .btn-emergency svg { width: 16px; height: 16px; }
+  .btn-emergency { font-size: 11px; padding: 8px 12px; }
+  .btn-emergency svg { width: 14px; height: 14px; }
   .mobile-menu-toggle { width: 32px; height: 32px; padding: 2px; }
 }
 
@@ -1078,7 +1082,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 22px;
 }
 .footer-logo .brand-logo {
-  filter: invert(1) brightness(1.5);
+  filter: brightness(0) invert(1);
   height: 48px;
 }
 .footer-brand p {
