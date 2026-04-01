@@ -1235,7 +1235,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .content-block ul li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   font-size: 15px;
   color: var(--text-muted);
@@ -1247,6 +1247,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: 50%;
   background: var(--gold);
   flex-shrink: 0;
+  margin-top: 8px;
 }
 
 /* FAQ / Accordion like feature list */
