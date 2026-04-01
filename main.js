@@ -38,7 +38,7 @@
     // Close on nav link click (mobile)
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth < 1024) {
+        if (window.innerWidth < 1024 && !link.parentElement.classList.contains('has-dropdown')) {
           navLinks.classList.remove('open');
           toggleBtn.classList.remove('open');
           document.body.style.overflow = '';
