@@ -145,4 +145,22 @@
     });
   }
 
+  // ===== MOBILE ACCORDION DROPDOWNS =====
+  document.querySelectorAll('.has-dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      if (window.innerWidth < 1024) {
+        e.preventDefault();
+        const parent = this.parentElement;
+        
+        // Collapse others at the same level
+        document.querySelectorAll('.has-dropdown').forEach(item => {
+          if (item !== parent) item.classList.remove('expanded');
+        });
+        
+        // Toggle current
+        parent.classList.toggle('expanded');
+      }
+    });
+  });
+
 })();
