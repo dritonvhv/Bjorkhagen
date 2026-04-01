@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – Björkhagens Lås | Ring 073-222 91 10</title>
+  <meta name="description" content="Kontakta Björkhagens Lås – din låssmed i Stockholm. Ring 073-222 91 10 för snabb hjälp. Jour dygnet runt, alla dagar. Gratis offert." />
+  <meta name="keywords" content="kontakt låssmed stockholm, björkhagens lås telefon, ring låssmed stockholm" />
+  <link rel="canonical" href="https://bjorkhagenslås.se/kontakt" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-page-grid {
+      display: grid;
+      gap: 48px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) { .contact-page-grid { grid-template-columns: 1.3fr 1fr; } }
+
+    .contact-info-card {
+      background: var(--dark);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      color: rgba(255,255,255,0.75);
+    }
+    .contact-info-card h2 { color: #fff; font-family: var(--font-headline); font-weight: 700; font-size: 1.6rem; margin-bottom: 8px; }
+    .contact-info-card > p { margin-bottom: 32px; font-size: 15px; line-height: 1.7; }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .contact-detail:last-child { border-bottom: none; }
+    .contact-detail-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      background: rgba(251,192,45,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-detail-icon .material-symbols-outlined {
+      font-size: 20px;
+      color: var(--gold);
+      font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+    }
+    .contact-detail-text strong { display: block; color: #fff; font-size: 14px; margin-bottom: 3px; }
+    .contact-detail-text span, .contact-detail-text a { font-size: 15px; color: rgba(255,255,255,0.7); }
+    .contact-detail-text a { transition: color 0.2s; }
+    .contact-detail-text a:hover { color: var(--gold); }
+
+    .contact-big-phone {
+      display: block;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: var(--gold);
+      letter-spacing: -0.03em;
+      margin: 20px 0;
+      transition: filter 0.2s;
+    }
+    .contact-big-phone:hover { filter: brightness(1.15); }
+
+    .form-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+    }
+    .form-card h2 { font-family: var(--font-headline); font-weight: 700; font-size: 1.5rem; margin-bottom: 8px; }
+    .form-card > p { font-size: 15px; color: var(--text-muted); margin-bottom: 28px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-submit { width: 100%; justify-content: center; margin-top: 8px; }
+
+    #form-success {
+      display: none;
+      background: #d4edda;
+      border: 1px solid #c3e6cb;
+      color: #155724;
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="material-symbols-outlined logo-icon">lock</span><div class="logo-text"><span class="logo-name">Björkhagens Lås</span><span class="logo-tagline">Sedan 1987</span></div></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Hem</a></li>
+        <li class="has-dropdown"><a href="#" class="nav-link">Tjänster <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;">expand_more</span></a><ul class="dropdown"><li><a href="lasoppning.html">Låsöppning</a></li><li><a href="lasbyte.html">Låsbyte</a></li><li><a href="jour.html">Jourlåssmed</a></li><li><a href="reparation.html">Reparation av lås</a></li><li><a href="cylinderbyte.html">Cylinderbyte</a></li></ul></li>
+        <li class="has-dropdown"><a href="#" class="nav-link">Områden <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;">expand_more</span></a><ul class="dropdown"><li><a href="lassmed-stockholm.html">Låssmed Stockholm</a></li><li><a href="lassmed-sodermalm.html">Låssmed Södermalm</a></li><li><a href="lassmed-nacka.html">Låssmed Nacka</a></li><li><a href="lassmed-huddinge.html">Låssmed Huddinge</a></li><li><a href="lassmed-arsta.html">Låssmed Årsta</a></li></ul></li>
+        <li><a href="om-oss.html" class="nav-link">Om oss</a></li>
+        <li><a href="kontakt.html" class="nav-link active">Kontakt</a></li>
+      </ul>
+      <div class="nav-cta"><a href="tel:0732229110" class="btn-emergency" id="header-call-btn"><span class="material-symbols-outlined">call</span>073-222 91 10</a><button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Öppna meny"><span></span><span></span><span></span></button></div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-content">
+        <nav class="breadcrumb"><a href="index.html">Hem</a><span class="material-symbols-outlined">chevron_right</span><span>Kontakt</span></nav>
+        <span class="page-hero-label"><span class="material-symbols-outlined" style="font-size:13px;">contact_phone</span>Kontakt</span>
+        <h1>Kontakta Björkhagens Lås</h1>
+        <p>Behöver du hjälp direkt? Ring oss. Vill du planera ett jobb eller begära offert? Fyll i formuläret så återkommer vi så snabbt som möjligt.</p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="contact-page-grid">
+          <!-- Contact info -->
+          <div>
+            <div class="contact-info-card">
+              <h2>Vi svarar alltid</h2>
+              <p>Ring oss direkt för omedelbar hjälp. Vi har jour dygnet runt, alla dagar om året.</p>
+
+              <a href="tel:0732229110" class="contact-big-phone" id="contact-page-phone">
+                <span class="material-symbols-outlined" style="font-size:28px;font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24;">call</span>
+                073-222 91 10
+              </a>
+
+              <div class="contact-detail">
+                <div class="contact-detail-icon"><span class="material-symbols-outlined">call</span></div>
+                <div class="contact-detail-text">
+                  <strong>Telefon</strong>
+                  <a href="tel:0732229110">073-222 91 10</a>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon"><span class="material-symbols-outlined">location_on</span></div>
+                <div class="contact-detail-text">
+                  <strong>Bas</strong>
+                  <span>Johanneshov, Stockholm</span>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon"><span class="material-symbols-outlined">schedule</span></div>
+                <div class="contact-detail-text">
+                  <strong>Öppettider</strong>
+                  <span>Alla dagar, dygnet runt (00:00–24:00)</span>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon"><span class="material-symbols-outlined">map</span></div>
+                <div class="contact-detail-text">
+                  <strong>Verksamhetsområde</strong>
+                  <span>Hela Stor-Stockholm</span>
+                </div>
+              </div>
+              <div class="contact-detail">
+                <div class="contact-detail-icon"><span class="material-symbols-outlined">payments</span></div>
+                <div class="contact-detail-text">
+                  <strong>Priser</strong>
+                  <span>Samma pris helg och vardag. Inga dolda avgifter.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Map placeholder -->
+            <div style="margin-top:20px;border-radius:var(--radius-xl);overflow:hidden;border:1px solid var(--border);height:220px;background:var(--surface-2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:var(--text-muted);">
+              <span class="material-symbols-outlined" style="font-size:40px;color:var(--gold-dark);font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48;">location_on</span>
+              <p style="font-size:14px;text-align:center;">Johanneshov, Stockholm<br /><a href="https://maps.google.com/?q=Johanneshov+Stockholm" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:600;">Öppna i Google Maps</a></p>
+            </div>
+          </div>
+
+          <!-- Contact form -->
+          <div class="form-card">
+            <h2>Skicka ett meddelande</h2>
+            <p>Berätta om ditt ärende. Vi återkommer så snabbt vi kan – vanligtvis inom en timme.</p>
+
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Namn *</label>
+                  <input type="text" id="contact-name" name="name" class="form-control" placeholder="Ditt namn" required autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label for="contact-phone">Telefon *</label>
+                  <input type="tel" id="contact-phone" name="phone" class="form-control" placeholder="07X-XXX XX XX" required autocomplete="tel" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">E-post</label>
+                <input type="email" id="contact-email" name="email" class="form-control" placeholder="din@email.se" autocomplete="email" />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-service">Tjänst</label>
+                <select id="contact-service" name="service" class="form-control">
+                  <option value="">Välj en tjänst...</option>
+                  <option value="lasoppning">Låsöppning</option>
+                  <option value="lasbyte">Låsbyte</option>
+                  <option value="jour">Jourlåssmed (akut)</option>
+                  <option value="reparation">Reparation av lås</option>
+                  <option value="cylinderbyte">Cylinderbyte</option>
+                  <option value="offert">Begär offert</option>
+                  <option value="annat">Annat</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-area">Område</label>
+                <input type="text" id="contact-area" name="area" class="form-control" placeholder="T.ex. Södermalm, Nacka..." />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Meddelande *</label>
+                <textarea id="contact-message" name="message" class="form-control" placeholder="Beskriv ditt ärende kortfattat..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary form-submit btn-lg" id="contact-submit">
+                <span class="material-symbols-outlined">send</span>
+                Skicka meddelande
+              </button>
+
+              <div id="form-success">
+                <strong>✓ Tack för ditt meddelande!</strong><br />
+                Vi återkommer till dig så snabbt som möjligt. Behöver du hjälp direkt? Ring <a href="tel:0732229110">073-222 91 10</a>.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section for SEO -->
+    <section class="section section--subtle">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Vanliga frågor</span>
+          <h2 class="section-title">Frågor & svar</h2>
+        </div>
+        <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:16px;">
+          <div class="feature-item" data-animate>
+            <div class="feature-item-icon"><span class="material-symbols-outlined">help</span></div>
+            <div class="feature-item-text">
+              <strong>Hur snabbt kan ni komma?</strong>
+              <p>Vi strävar alltid efter att komma så snabbt som möjligt. I Stockholmsregionen kan vi ofta vara på plats inom relativt kort tid beroende på nuvarande uppdrag.</p>
+            </div>
+          </div>
+          <div class="feature-item" data-animate>
+            <div class="feature-item-icon"><span class="material-symbols-outlined">help</span></div>
+            <div class="feature-item-text">
+              <strong>Kostar det mer att ringa på helgen?</strong>
+              <p>Nej! Det är ett av våra viktigaste löften. Samma pris vardag och helg – inga jourtillägg, inga dolda avgifter.</p>
+            </div>
+          </div>
+          <div class="feature-item" data-animate>
+            <div class="feature-item-icon"><span class="material-symbols-outlined">help</span></div>
+            <div class="feature-item-text">
+              <strong>Kan ni ge offert innan jobbet påbörjas?</strong>
+              <p>Ja, alltid. Vi kan komma och titta gratis och ge en offert utan att du behöver betala något om du inte vill gå vidare.</p>
+            </div>
+          </div>
+          <div class="feature-item" data-animate>
+            <div class="feature-item-icon"><span class="material-symbols-outlined">help</span></div>
+            <div class="feature-item-text">
+              <strong>Måste jag byta hela låset om jag är utelåst?</strong>
+              <p>Inte nödvändigtvis. Vi försöker alltid öppna låset utan att skada det. Ofta behöver vi inte byta något alls.</p>
+            </div>
+          </div>
+          <div class="feature-item" data-animate>
+            <div class="feature-item-icon"><span class="material-symbols-outlined">help</span></div>
+            <div class="feature-item-text">
+              <strong>Vilka betalningssätt accepterar ni?</strong>
+              <p>Vi accepterar kontant, kort och Swish. Du får alltid kvitto på utfört arbete.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><div class="footer-logo"><span class="material-symbols-outlined">lock</span><span>Björkhagens Lås</span></div><p>Din pålitliga låssmed i Stockholm sedan 1987.</p><a href="tel:0732229110" class="footer-phone"><span class="material-symbols-outlined">call</span>073-222 91 10</a></div><div class="footer-col"><h4>Tjänster</h4><ul><li><a href="lasoppning.html">Låsöppning</a></li><li><a href="lasbyte.html">Låsbyte</a></li><li><a href="jour.html">Jourlåssmed</a></li><li><a href="reparation.html">Reparation av lås</a></li><li><a href="cylinderbyte.html">Cylinderbyte</a></li></ul></div><div class="footer-col"><h4>Områden</h4><ul><li><a href="lassmed-stockholm.html">Stockholm</a></li><li><a href="lassmed-sodermalm.html">Södermalm</a></li><li><a href="lassmed-nacka.html">Nacka</a></li><li><a href="lassmed-huddinge.html">Huddinge</a></li><li><a href="lassmed-arsta.html">Årsta</a></li></ul></div><div class="footer-col"><h4>Kontakt</h4><ul class="footer-contact"><li><span class="material-symbols-outlined">location_on</span>Johanneshov, Stockholm</li><li><span class="material-symbols-outlined">call</span><a href="tel:0732229110">073-222 91 10</a></li><li><span class="material-symbols-outlined">schedule</span>Öppet alla dagar 00–24</li></ul></div></div><div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2024 Björkhagens Lås. Alla rättigheter förbehållna.</p></div></div></footer>
+  <a href="tel:0732229110" class="float-call" id="float-call-btn" aria-label="Ring oss"><span class="material-symbols-outlined">call</span></a>
+  <script src="main.js"></script>
+</body>
+</html>
