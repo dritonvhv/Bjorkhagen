@@ -118,32 +118,7 @@
     }
   });
 
-  // ===== CONTACT FORM SUBMISSION =====
-  const form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('[type="submit"]');
-      if (btn) {
-        btn.disabled = true;
-        btn.textContent = 'Skickar…';
-      }
-
-      // Simulate async submit
-      setTimeout(() => {
-        const successMsg = document.getElementById('form-success');
-        if (successMsg) {
-          successMsg.style.display = 'block';
-          successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        form.reset();
-        if (btn) {
-          btn.disabled = false;
-          btn.textContent = 'Skicka meddelande';
-        }
-      }, 1200);
-    });
-  }
+  // Kontaktformuläret hanteras av Web3Forms (action på form-elementet)
 
   // ===== MOBILE ACCORDION DROPDOWNS =====
   document.querySelectorAll('.has-dropdown > a').forEach(link => {
