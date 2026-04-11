@@ -83,14 +83,27 @@
 
     #form-success {
       display: none;
-      background: #d4edda;
-      border: 1px solid #c3e6cb;
-      color: #155724;
+      background: #d1fae5;
+      border: 1px solid #6ee7b7;
+      color: #065f46;
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      font-size: 15px;
+      margin-top: 16px;
+      align-items: center;
+      gap: 10px;
+    }
+    #form-error {
+      display: none;
+      background: #fee2e2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
       padding: 16px 20px;
       border-radius: var(--radius-md);
       font-size: 15px;
       margin-top: 16px;
     }
+    .btn-loading { opacity: 0.7; pointer-events: none; }
   </style>
 </head>
 <body>
@@ -187,6 +200,13 @@
             <p>Berätta om ditt ärende. Vi återkommer så snabbt vi kan – vanligtvis inom en timme.</p>
 
             <form class="contact-form" id="contact-form" novalidate>
+              <!-- Web3Forms konfiguration -->
+              <input type="hidden" name="access_key" value="ea919b2d-2ec6-4c47-9a34-e5acab31740c" />
+              <input type="hidden" name="subject" value="Ny förfrågan från Björkhagens Lås webbsida" />
+              <input type="hidden" name="from_name" value="Björkhagens Lås Kontaktformulär" />
+              <input type="hidden" name="redirect" value="false" />
+              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+
               <div class="form-row">
                 <div class="form-group">
                   <label for="contact-name">Namn *</label>
@@ -212,6 +232,7 @@
                   <option value="jour">Jourlåssmed (akut)</option>
                   <option value="reparation">Reparation av lås</option>
                   <option value="cylinderbyte">Cylinderbyte</option>
+                  <option value="yale">Yale Doorman installation</option>
                   <option value="offert">Begär offert</option>
                   <option value="annat">Annat</option>
                 </select>
@@ -228,13 +249,16 @@
               </div>
 
               <button type="submit" class="btn-primary form-submit btn-lg" id="contact-submit">
-                <span class="material-symbols-outlined">send</span>
-                Skicka meddelande
+                <span class="material-symbols-outlined" id="submit-icon">send</span>
+                <span id="submit-text">Skicka meddelande</span>
               </button>
 
               <div id="form-success">
-                <strong>✓ Tack för ditt meddelande!</strong><br />
-                Vi återkommer till dig så snabbt som möjligt. Behöver du hjälp direkt? Ring <a href="tel:0732229110">073-222 91 10</a>.
+                ✅ <strong>Tack! Ditt meddelande har skickats.</strong><br />
+                Vi återkommer så snabbt vi kan. Behöver du hjälp direkt? Ring <a href="tel:0732229110">073-222 91 10</a>.
+              </div>
+              <div id="form-error">
+                ❌ Något gick fel. Försök igen eller ring oss på <a href="tel:0732229110">073-222 91 10</a>.
               </div>
             </form>
           </div>
@@ -295,5 +319,56 @@
         </div><p>Din pålitliga låssmed i Stockholm sedan 1987.</p><a href="tel:0732229110" class="footer-phone"><span class="material-symbols-outlined">call</span>073-222 91 10</a></div><div class="footer-col"><h4>Tjänster</h4><ul><li><a href="lasoppning.html">Låsöppning</a></li><li><a href="lasbyte.html">Låsbyte</a></li><li><a href="jour.html">Jourlåssmed</a></li><li><a href="reparation.html">Reparation av lås</a></li><li><a href="cylinderbyte.html">Cylinderbyte</a></li></ul></div><div class="footer-col"><h4>Områden</h4><ul><li><a href="lassmed-stockholm.html">Stockholm</a></li><li><a href="lassmed-sodermalm.html">Södermalm</a></li><li><a href="lassmed-nacka.html">Nacka</a></li><li><a href="lassmed-huddinge.html">Huddinge</a></li><li><a href="lassmed-arsta.html">Årsta</a></li></ul></div><div class="footer-col"><h4>Kontakt</h4><ul class="footer-contact"><li><span class="material-symbols-outlined">location_on</span>Trollesundsvägen 175, 124 57 Stockholm</li><li><span class="material-symbols-outlined">call</span><a href="tel:0732229110">073-222 91 10</a></li><li><span class="material-symbols-outlined">schedule</span>Öppet alla dagar 00–24</li></ul></div></div><div class="footer-bottom"><div class="container footer-bottom-inner"><p>© 2024 Björkhagens Lås. Alla rättigheter förbehållna.</p></div></div></footer>
   
   <script src="main.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const form     = e.target;
+      const btn      = document.getElementById('contact-submit');
+      const icon     = document.getElementById('submit-icon');
+      const txt      = document.getElementById('submit-text');
+      const success  = document.getElementById('form-success');
+      const error    = document.getElementById('form-error');
+
+      // Validering
+      const name    = form.querySelector('[name="name"]').value.trim();
+      const phone   = form.querySelector('[name="phone"]').value.trim();
+      const message = form.querySelector('[name="message"]').value.trim();
+      if (!name || !phone || !message) {
+        alert('Fyll i namn, telefon och meddelande.');
+        return;
+      }
+
+      // Loading-state
+      btn.classList.add('btn-loading');
+      icon.textContent = 'hourglass_top';
+      txt.textContent  = 'Skickar...';
+      success.style.display = 'none';
+      error.style.display   = 'none';
+
+      try {
+        const data = new FormData(form);
+        const res  = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data
+        });
+        const json = await res.json();
+
+        if (json.success) {
+          success.style.display = 'flex';
+          form.reset();
+        } else {
+          throw new Error(json.message || 'Misslyckades');
+        }
+      } catch (err) {
+        error.style.display = 'block';
+        console.error(err);
+      } finally {
+        btn.classList.remove('btn-loading');
+        icon.textContent = 'send';
+        txt.textContent  = 'Skicka meddelande';
+      }
+    });
+  </script>
 </body>
 </html>
