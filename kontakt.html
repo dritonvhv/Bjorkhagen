@@ -199,12 +199,12 @@
             <h2>Skicka ett meddelande</h2>
             <p>Berätta om ditt ärende. Vi återkommer så snabbt vi kan – vanligtvis inom en timme.</p>
 
-            <form class="contact-form" id="contact-form" novalidate>
+            <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
               <!-- Web3Forms konfiguration -->
               <input type="hidden" name="access_key" value="ea919b2d-2ec6-4c47-9a34-e5acab31740c" />
               <input type="hidden" name="subject" value="Ny förfrågan från Björkhagens Lås webbsida" />
               <input type="hidden" name="from_name" value="Björkhagens Lås Kontaktformulär" />
-              <input type="hidden" name="redirect" value="false" />
+              <input type="hidden" name="redirect" value="https://dritonvhv.github.io/Bjorkhagen/kontakt.html?skickad=1" />
               <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
 
               <div class="form-row">
@@ -249,8 +249,8 @@
               </div>
 
               <button type="submit" class="btn-primary form-submit btn-lg" id="contact-submit">
-                <span class="material-symbols-outlined" id="submit-icon">send</span>
-                <span id="submit-text">Skicka meddelande</span>
+                <span class="material-symbols-outlined">send</span>
+                <span>Skicka meddelande</span>
               </button>
 
               <div id="form-success">
@@ -320,55 +320,14 @@
   
   <script src="main.js"></script>
   <script>
-    document.getElementById('contact-form').addEventListener('submit', async function(e) {
-      e.preventDefault();
-
-      const form     = e.target;
-      const btn      = document.getElementById('contact-submit');
-      const icon     = document.getElementById('submit-icon');
-      const txt      = document.getElementById('submit-text');
-      const success  = document.getElementById('form-success');
-      const error    = document.getElementById('form-error');
-
-      // Validering
-      const name    = form.querySelector('[name="name"]').value.trim();
-      const phone   = form.querySelector('[name="phone"]').value.trim();
-      const message = form.querySelector('[name="message"]').value.trim();
-      if (!name || !phone || !message) {
-        alert('Fyll i namn, telefon och meddelande.');
-        return;
+    // Visa bekräftelse om Web3Forms redirectat tillbaka med ?skickad=1
+    if (new URLSearchParams(window.location.search).get('skickad') === '1') {
+      var el = document.getElementById('form-success');
+      if (el) {
+        el.style.display = 'flex';
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-
-      // Loading-state
-      btn.classList.add('btn-loading');
-      icon.textContent = 'hourglass_top';
-      txt.textContent  = 'Skickar...';
-      success.style.display = 'none';
-      error.style.display   = 'none';
-
-      try {
-        const data = new FormData(form);
-        const res  = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          body: data
-        });
-        const json = await res.json();
-
-        if (json.success) {
-          success.style.display = 'flex';
-          form.reset();
-        } else {
-          throw new Error(json.message || 'Misslyckades');
-        }
-      } catch (err) {
-        error.style.display = 'block';
-        console.error(err);
-      } finally {
-        btn.classList.remove('btn-loading');
-        icon.textContent = 'send';
-        txt.textContent  = 'Skicka meddelande';
-      }
-    });
+    }
   </script>
 </body>
 </html>
