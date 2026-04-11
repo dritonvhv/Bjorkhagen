@@ -67,6 +67,29 @@
   --max-w:       1200px;
 }
 
+/* ===== YALE DOORMAN RESPONSIVE GRID ===== */
+.yale-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .yale-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+}
+.yale-img-wrap {
+  position: relative;
+  order: -1; /* Bild visas först på mobil */
+}
+@media (min-width: 768px) {
+  .yale-img-wrap {
+    order: 0; /* Höger kolumn på desktop */
+  }
+}
+
 /* ===== RESET ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
