@@ -17,7 +17,6 @@
     { "source": "/lassmed-sodermalm/",    "destination": "/lassmed-sodermalm",    "permanent": true },
     { "source": "/lassmed-stockholm/",    "destination": "/lassmed-stockholm",    "permanent": true },
     { "source": "/lassmed-ostermalm/",    "destination": "/lassmed-ostermalm",    "permanent": true },
-    { "source": "/lassmed-ostermalm",     "destination": "/lassmed-ostermalm",    "permanent": true },
 
     { "source": "/jour/",                 "destination": "/jour",                 "permanent": true },
     { "source": "/jourlassmed/",          "destination": "/jour",                 "permanent": true },
@@ -26,13 +25,11 @@
     { "source": "/jour-service",          "destination": "/jour",                 "permanent": true },
 
     { "source": "/lasoppning/",           "destination": "/lasoppning",           "permanent": true },
-    { "source": "/lasoppning",            "destination": "/lasoppning",           "permanent": true },
     { "source": "/l%C3%A5s%C3%B6ppning/","destination": "/lasoppning",           "permanent": true },
     { "source": "/låsöppning/",           "destination": "/lasoppning",           "permanent": true },
     { "source": "/låsöppning",            "destination": "/lasoppning",           "permanent": true },
 
     { "source": "/lasbyte/",              "destination": "/lasbyte",              "permanent": true },
-    { "source": "/lasbyte",               "destination": "/lasbyte",              "permanent": true },
     { "source": "/l%C3%A5sbyte/",        "destination": "/lasbyte",              "permanent": true },
     { "source": "/låsbyte/",             "destination": "/lasbyte",              "permanent": true },
     { "source": "/låsbyte",              "destination": "/lasbyte",              "permanent": true },
