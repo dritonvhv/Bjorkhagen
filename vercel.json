@@ -1,0 +1,49 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/kontakta-oss/",         "destination": "/kontakta-oss",         "permanent": true },
+    { "source": "/kontakt/",              "destination": "/kontakta-oss",         "permanent": true },
+    { "source": "/kontakt",               "destination": "/kontakta-oss",         "permanent": true },
+    { "source": "/om-oss/",               "destination": "/om-foretaget",         "permanent": true },
+    { "source": "/om-oss",                "destination": "/om-foretaget",         "permanent": true },
+    { "source": "/om-foretaget/",         "destination": "/om-foretaget",         "permanent": true },
+
+    { "source": "/lassmed-huddinge/",     "destination": "/lassmed-huddinge",     "permanent": true },
+    { "source": "/lassmed-arsta/",        "destination": "/lassmed-arsta",        "permanent": true },
+    { "source": "/lassmed-enskede/",      "destination": "/lassmed-enskede",      "permanent": true },
+    { "source": "/lassmed-liljeholmen/",  "destination": "/lassmed-liljeholmen",  "permanent": true },
+    { "source": "/lassmed-nacka/",        "destination": "/lassmed-nacka",        "permanent": true },
+    { "source": "/lassmed-sodermalm/",    "destination": "/lassmed-sodermalm",    "permanent": true },
+    { "source": "/lassmed-stockholm/",    "destination": "/lassmed-stockholm",    "permanent": true },
+    { "source": "/lassmed-ostermalm/",    "destination": "/lassmed-ostermalm",    "permanent": true },
+    { "source": "/lassmed-ostermalm",     "destination": "/lassmed-ostermalm",    "permanent": true },
+
+    { "source": "/jour/",                 "destination": "/jour",                 "permanent": true },
+    { "source": "/jourlassmed/",          "destination": "/jour",                 "permanent": true },
+    { "source": "/jourlassmed",           "destination": "/jour",                 "permanent": true },
+    { "source": "/jour-service/",         "destination": "/jour",                 "permanent": true },
+    { "source": "/jour-service",          "destination": "/jour",                 "permanent": true },
+
+    { "source": "/lasoppning/",           "destination": "/lasoppning",           "permanent": true },
+    { "source": "/lasoppning",            "destination": "/lasoppning",           "permanent": true },
+    { "source": "/l%C3%A5s%C3%B6ppning/","destination": "/lasoppning",           "permanent": true },
+    { "source": "/låsöppning/",           "destination": "/lasoppning",           "permanent": true },
+    { "source": "/låsöppning",            "destination": "/lasoppning",           "permanent": true },
+
+    { "source": "/lasbyte/",              "destination": "/lasbyte",              "permanent": true },
+    { "source": "/lasbyte",               "destination": "/lasbyte",              "permanent": true },
+    { "source": "/l%C3%A5sbyte/",        "destination": "/lasbyte",              "permanent": true },
+    { "source": "/låsbyte/",             "destination": "/lasbyte",              "permanent": true },
+    { "source": "/låsbyte",              "destination": "/lasbyte",              "permanent": true },
+
+    { "source": "/cylinderbyte/",         "destination": "/cylinderbyte",         "permanent": true },
+    { "source": "/byte-av-cylinder/",     "destination": "/cylinderbyte",         "permanent": true },
+    { "source": "/byte-av-cylinder",      "destination": "/cylinderbyte",         "permanent": true },
+
+    { "source": "/reparation/",           "destination": "/reparation",           "permanent": true },
+    { "source": "/tjanster/",             "destination": "/tjanster",             "permanent": true },
+    { "source": "/omraden/",             "destination": "/omraden",             "permanent": true },
+    { "source": "/code/",                 "destination": "/code",                 "permanent": true }
+  ]
+}
