@@ -138,43 +138,4 @@
     });
   });
 
-  // ===== REVIEW CAROUSEL =====
-  const slides = document.querySelectorAll('.review-slide');
-  const dotsContainer = document.getElementById('reviewDots');
-  const prevBtn = document.getElementById('reviewPrev');
-  const nextBtn = document.getElementById('reviewNext');
-
-  if (slides.length && dotsContainer && prevBtn && nextBtn) {
-    let current = 0;
-
-    // Build dots
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'review-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Gå till recension ' + (i + 1));
-      dot.addEventListener('click', () => goTo(i));
-      dotsContainer.appendChild(dot);
-    });
-
-    function goTo(idx) {
-      slides[current].classList.remove('active');
-      dotsContainer.children[current].classList.remove('active');
-      current = (idx + slides.length) % slides.length;
-      slides[current].classList.add('active');
-      dotsContainer.children[current].classList.add('active');
-    }
-
-    // Show first slide
-    slides[0].classList.add('active');
-
-    prevBtn.addEventListener('click', () => goTo(current - 1));
-    nextBtn.addEventListener('click', () => goTo(current + 1));
-
-    // Auto-advance every 6 seconds
-    let autoTimer = setInterval(() => goTo(current + 1), 6000);
-    [prevBtn, nextBtn].forEach(btn => {
-      btn.addEventListener('click', () => { clearInterval(autoTimer); autoTimer = setInterval(() => goTo(current + 1), 6000); });
-    });
-  }
-
 })();
