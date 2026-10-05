@@ -1017,7 +1017,142 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .review-author strong { font-size: 14px; font-weight: 700; display: block; }
 .review-author span  { font-size: 12px; color: var(--text-muted); }
 
-/* ===== AREAS ===== */
+/* ===== REVIEW CAROUSEL (single card) ===== */
+.review-carousel {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.review-carousel-track {
+  overflow: hidden;
+}
+.review-slide {
+  display: none;
+}
+.review-slide.active {
+  display: block;
+  animation: slideFadeIn 0.4s var(--ease);
+}
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.review-card-single {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 36px 40px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 480px) {
+  .review-card-single { padding: 24px 20px; }
+}
+.review-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.reco-logo-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a73e8;
+  letter-spacing: 0.02em;
+}
+.review-stars-row {
+  display: flex;
+  gap: 3px;
+  font-size: 20px;
+  color: var(--gold);
+  line-height: 1;
+}
+.review-quote {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text);
+  font-style: italic;
+  margin: 0;
+}
+@media (max-width: 480px) {
+  .review-quote { font-size: 14px; }
+}
+.review-author-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+.review-avatar-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--dark), var(--dark-mid));
+  color: #fff;
+  font-weight: 700;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.review-author-row strong { font-size: 14px; font-weight: 700; display: block; color: var(--text); }
+.review-author-row span  { font-size: 12px; color: var(--text-muted); }
+/* Controls row: prev | dots | next — BELOW the card */
+.review-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+.review-prev,
+.review-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+.review-prev:hover,
+.review-next:hover {
+  background: var(--gold-light);
+  border-color: var(--gold);
+  transform: scale(1.08);
+}
+.review-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.review-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.review-dot.active {
+  background: var(--gold-dark);
+  transform: scale(1.3);
+}
+
+
 .areas-grid {
   display: grid;
   gap: 12px;
